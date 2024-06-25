@@ -1,1 +1,34 @@
-<p>ebook-list works!</p>
+<div class="w-full max-w-xs">
+  <!-- Formulario para el ID -->
+  <form [formGroup]="idForm" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+    <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2" for="id">ID</label>
+      <input formControlName="id" id="id" type="number" placeholder="ID" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+    </div>
+  </form>
+
+  <!-- Formulario para los campos de edición -->
+  <form [formGroup]="editForm" (ngSubmit)="create()" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+    <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2" for="author">Author</label>
+      <input formControlName="author" id="author" type="text" placeholder="Author" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+    </div>
+    <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2" for="genre">Genre</label>
+      <input formControlName="genre" id="genre" type="text" placeholder="Genre" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+    </div>
+    <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2" for="format">Format</label>
+      <input formControlName="format" id="format" type="text" placeholder="Format" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+    </div>
+    <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2" for="price">Price</label>
+      <input formControlName="price" id="price" type="number" placeholder="Price" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+    </div>
+    <div class="flex items-center justify-between">
+      <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+        Actualizar
+      </button>
+    </div>
+  </form>
+</div>

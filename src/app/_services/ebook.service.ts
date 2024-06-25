@@ -17,7 +17,7 @@ export class EbookService {
     return this.http.post(`${this.baseUrl}/api/ebook/`, ebook);
   }
 
-  updateEbook(ebook: EditEbook): Observable<Object>{
-    return this.http.put('${this.baseUrl}/ebooks',ebook);
+  updateEbook(ebook: EditEbook, id: number): Observable<Object>{
+    return this.http.put(`${this.baseUrl}/api/ebook/${id}`,ebook);
   }
 }

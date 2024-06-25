@@ -42,5 +42,4 @@ export class CreateEbookComponent implements OnInit {
       }
     });
   }
-
 }
