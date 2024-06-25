@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { CreateEbook } from '../_interfaces/create-ebook';
 import { environment } from 'src/environments/environment.development';
 import { Observable } from 'rxjs';
+import { EditEbook } from '../_interfaces/edit-ebook';
 
 @Injectable({
   providedIn: 'root',
@@ -13,6 +14,10 @@ export class EbookService {
   constructor(private http: HttpClient) {}
 
   createEbook(ebook: CreateEbook): Observable<Object> {
-    return this.http.post(`${this.baseUrl}/ebooks`, ebook);
+    return this.http.post(`${this.baseUrl}/api/ebook/`, ebook);
+  }
+
+  updateEbook(ebook: EditEbook): Observable<Object>{
+    return this.http.put('${this.baseUrl}/ebooks',ebook);
   }
 }

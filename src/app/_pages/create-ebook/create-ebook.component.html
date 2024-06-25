@@ -1,1 +1,32 @@
-<p>create-ebook works!</p>
+<div class="w-full max-w-xs">
+  <form [formGroup]="createForm" (ngSubmit)="create()" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+    <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2" for="title">Titulo</label>
+      <input formControlName="title" id="title" type="text" placeholder="Titulo" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+    </div>
+    <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2" for="author">Author</label>
+      <input formControlName="author" id="author" type="text" placeholder="Author" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+    </div>
+    <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2" for="genre">Genre</label>
+      <input formControlName="genre" id="genre" type="text" placeholder="Genre" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+    </div>
+    <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2" for="format">Format</label>
+      <input formControlName="format" id="format" type="text" placeholder="Format" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+    </div>
+    <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2" for="price">Price</label>
+      <input formControlName="price" id="price" type="number" placeholder="Price" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+    </div>
+    <div class="flex items-center justify-between">
+      <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+        Crear
+      </button>
+    </div>
+  </form>
+  <p class="text-center text-gray-500 text-xs">
+    &copy;2024 Acme Corp. Todos los derechos reservados.
+  </p>
+</div>
