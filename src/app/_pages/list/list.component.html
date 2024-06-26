@@ -1,0 +1,44 @@
+<ul>
+  <li *ngFor="let ebook of ebooks" class="ebook-item flex flex-wrap gap-4 mb-4">
+    <div class="flex-1 min-w-[100px]"><strong>Title:</strong> {{ ebook.title }}</div>
+    <div class="flex-1 min-w-[100px]"><strong>Author:</strong> {{ ebook.author }}</div>
+    <div class="flex-1 min-w-[100px]"><strong>Genre:</strong> {{ ebook.genre }}</div>
+    <div class="flex-1 min-w-[100px]"><strong>Format:</strong> {{ ebook.format }}</div>
+    <div class="flex-1 min-w-[100px]"><strong>Available:</strong> {{ ebook.isAvailable ? 'Yes' : 'No' }}</div>
+    <div class="flex-1 min-w-[100px]"><strong>Price:</strong> {{ ebook.price }}</div>
+    <div class="flex-1 min-w-[100px]"><strong>Stock:</strong> {{ ebook.stock }}</div>
+    <button (click)="selectEbook(ebook)" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+      Edit
+    </button>
+    <button (click)="deleteEbook(ebook.id)" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+      Delete
+    </button>
+  </li>
+</ul>
+
+<!-- Formulario para los campos de edición -->
+<div class="w-full max-w-xs flex justify-center items-center" *ngIf="selectedEbookId !== null">
+  <form [formGroup]="editForm" (ngSubmit)="updateEbook()" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 w-full">
+    <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2" for="author">Author</label>
+      <input formControlName="author" id="author" type="text" placeholder="Author" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+    </div>
+    <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2" for="genre">Genre</label>
+      <input formControlName="genre" id="genre" type="text" placeholder="Genre" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+    </div>
+    <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2" for="format">Format</label>
+      <input formControlName="format" id="format" type="text" placeholder="Format" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+    </div>
+    <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2" for="price">Price</label>
+      <input formControlName="price" id="price" type="number" placeholder="Price" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+    </div>
+    <div class="flex items-center justify-between">
+      <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+        Update
+      </button>
+    </div>
+  </form>
+</div>

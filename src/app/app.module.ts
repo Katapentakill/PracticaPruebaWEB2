@@ -7,16 +7,18 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { TextInputComponent } from './_components/text-input/text-input.component';
 import { SelectInputComponent } from './_components/select-input/select-input.component';
-import { EbookListComponent } from './_pages/ebook-list/ebook-list.component';
+import { EbookUpdateComponent } from './_pages/ebook-list/ebook-list.component';
 import { CreateEbookComponent } from './_pages/create-ebook/create-ebook.component';
+import { ListComponent } from './_pages/list/list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TextInputComponent,
     SelectInputComponent,
-    EbookListComponent,
+    EbookUpdateComponent,
     CreateEbookComponent,
+    ListComponent,
   ],
   imports: [
     BrowserModule,

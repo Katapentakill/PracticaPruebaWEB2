@@ -4,11 +4,11 @@ import { Router } from '@angular/router';
 import { EbookService } from 'src/app/_services/ebook.service';
 
 @Component({
-  selector: 'app-ebook-list',
+  selector: 'app-ebook-update',
   templateUrl: './ebook-list.component.html',
   styles: []
 })
-export class EbookListComponent implements OnInit {
+export class EbookUpdateComponent implements OnInit {
   idForm: FormGroup = new FormGroup({});
   editForm: FormGroup = new FormGroup({});
 
